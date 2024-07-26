@@ -36,11 +36,23 @@ nav,
   display: flex;
 }
 
+#desktop-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: top 0.3s;
+}
+
 nav {
-  position: relative;
+  position: flex;
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
+  height: 8vh;
+  z-index: 9999;
 }
 
 .nav-links {
@@ -55,8 +67,7 @@ a {
   outline: none;
   border-bottom: none;
   text-decoration: none;
-  text-decoration-color: white
-  ;;
+  text-decoration-color: white;
 }
 
 a::after {
@@ -189,7 +200,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 80vh;
+    height: 96vh;
 }
 
 .section__pic-container {
@@ -247,7 +258,7 @@ section {
     gap: 1rem
 }
 
-.btn {
+.button {
     font-weight: 600;
     transition: all 300ms ease;
     padding: 1rem;
@@ -255,35 +266,36 @@ section {
     border-radius: 2rem
 }
 
-.btn-color-1,
-.btn-color-2 {
+.btn-color-1
+ {
     border: rgb(255, 251, 251) 0.1rem solid;
 }
 
 .btn-color-1:hover,
-.btn-color-2:hover {
+.button:hover {
     cursor: pointer;
 }
 
 .btn-color-1 {
   color: black;
 }
-.btn-color-2:hover {
+.button:hover {
     background: white;
     color: black;
+    transition: all 300ms ease;
+
+}
+
+.button, .btn-color-1 {
+    background: none;
+}
+.btn-color-1 {
+  background-color: white;
 }
 
 .btn-color-1:hover {
-    color: white;
-    background: black;
-}
-
-.btn-color-2 {
-    background: none;
-}
-
-.btn-color-2:hover {
-    border: rgb(255, 255, 255)
+  color: white;
+  background: rgb(24, 30, 57);
 }
 
 .btn-container {
@@ -359,17 +371,60 @@ section {
     width: 90%;
     height: 90%;
 }
+
+.photography-img {
+  border-radius: 1rem;
+    width: 40%;
+    height: 40%;
+}
   
 
 .project-title {
     margin: 1rem;
     color: white;
 }
-
+/*
 .project-btn {
     color: white;
     border-color: white;
 }
+*/
+.modal, 
+.modal2,
+.modal3 {
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  max-width: 50ch;
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+  box-shadow: 0 0 1em rgb(0, 0, 0 / .3);
+  background-color: rgb(24, 30, 57);
+
+  & > * {
+    margin: 0 0 0.5rem 0;
+  }
+}
+.close-button, 
+.close-button2, .close-button3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+
+.project1-img {
+  border-radius: 2rem;
+    width: 30%;
+    height: 30%;
+}
+
 
 #contact {
     display: flex;
@@ -417,5 +472,7 @@ footer {
 }
 
 footer p {
-    text-align: center
+    text-align: center;
+    padding-top: 120px;
+    
 }
